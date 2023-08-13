@@ -1,0 +1,93 @@
+:root {
+	--clr-base: #dfdfdf;
+	--clr-base-dk: #9c9c9c;
+	--clr-primary: #c45adc;
+	--clr-primary-lt: #cf7ae3;
+	--number-bg: #2f3747;
+	--number-bg-lt: #3e495e;
+	--screen-bg: #292e37;
+
+	--size-of-btns: 6rem;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: linear-gradient(to right, #40104a, #9c4fad);
+	color: var(--clr-base);
+}
+
+.calculator-grid {
+	display: grid;
+	grid-template-columns: repeat(4, var(--size-of-btns));
+	grid-template-rows: minmax(12rem, auto) repeat(5, var(--size-of-btns));
+	justify-content: center;
+	margin-top: 2rem;
+}
+
+.screen {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: end;
+	gap: 25px;
+	padding: 55px 15px 15px 15px;
+	grid-column: span 4;
+	background-color: #2a2e37;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+.previous-operand {
+	color: var(--clr-base-dk);
+	font-size: 1.5rem;
+	padding-right: 10px;
+}
+
+.current-operand {
+	font-size: 3rem;
+}
+
+.calculator-grid > button {
+	cursor: pointer;
+	font-size: 1.8rem;
+	color: var(--clr-base);
+	background-color: var(--number-bg);
+	border: 1px solid var(--screen-bg);
+	outline: none;
+}
+
+.calculator-grid > button:hover,
+.calculator-grid > button:focus {
+	background-color: var(--number-bg-lt);
+}
+
+button.bg-primary {
+	background: var(--clr-primary);
+}
+
+.calculator-grid > button.bg-primary:hover,
+.calculator-grid > button.bg-primary:focus {
+	background-color: var(--clr-primary-lt);
+}
+
+button.clr-primary {
+	color: var(--clr-primary);
+}
+
+.row-span-two {
+	grid-row: span 2;
+}
+
+.col-span-two {
+	grid-column: span 2;
+}
